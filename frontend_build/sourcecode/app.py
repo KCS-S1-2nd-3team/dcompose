@@ -83,7 +83,7 @@ def delDiary(seq):
 
 # 모든 외부 접속을 허용함 (포트는 기본 5000)
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0',port=35001)
 
 
 # 화면
