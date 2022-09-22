@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, request, redirect, url_for
 import requests, socket
 import json
 
-url = "http://backend-lb:8080"
+url = "http://192.168.56.102:8080"
 
 app = Flask(__name__)
 # app.config['JSON_AS_ASCII'] = False
@@ -83,7 +83,7 @@ def delDiary(seq):
 
 # 모든 외부 접속을 허용함 (포트는 기본 5000)
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=35001)
+    app.run(host='0.0.0.0')
 
 
 # 화면
