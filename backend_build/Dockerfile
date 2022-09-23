@@ -9,6 +9,8 @@ RUN mvn package -Dmaven.test.skip=true
 
 FROM eclipse-temurin:11.0.16.1_1-jre-alpine as jdk-stage
 COPY --from=maven-stage /sourcecode/target/DockerBackendSample-0.0.1-SNAPSHOT.jar /server/server.jar
+RUN apk add --update tzdata
+ENV TZ=Asia/Seoul
 EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "/server/server.jar"]
 
