@@ -4,7 +4,6 @@ RUN apt-get update && \
     apt-get install -y git
 WORKDIR /sourcecode
 ADD ./sourcecode .
-#RUN git clone https://github.com/CptBluebear/DockerBackendSample.git ./
 RUN mvn package -Dmaven.test.skip=true
 
 FROM eclipse-temurin:11.0.16.1_1-jre-alpine as jdk-stage
